@@ -1,9 +1,18 @@
 ---
+import { Image } from 'astro:assets';
 import { SITE } from 'astrowind:config';
+import logo from '~/assets/images/company/newlogo.png';
 ---
 
-<span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
->
-  🚀 {SITE?.name}
-</span>
+<div class="flex items-center justify-center h-15 p-2 rounded-md dark:bg-gray-800">
+  <Image
+    src={logo}
+    width={200}
+    height={200}
+    alt="My Landing Page"
+    class="mb-4 lg:mb-0 lg:mr-8"
+    loading="lazy"
+    decoding="async"
+    style="max-width: 50px; max-height: 100px;"
+  />
+</div>
