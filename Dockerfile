@@ -2,10 +2,14 @@ FROM node:alpine3.19 AS build
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm ci --no-audit --no-optional --max-old-space-size=512
+# Remove existing node_modules and package-lock.json if they exist
+RUN rm -rf node_modules package-lock.json
+# Install dependencies with legacy-peer-deps flag and force option
+RUN npm install --legacy-peer-deps --force
 
 COPY . .
-RUN npm run build --max-old-space-size=512
+# Build with increased memory limit and production flag
+RUN NODE_ENV=production npm run build --max-old-space-size=4096
 
 FROM node:alpine3.19-slim AS production
 WORKDIR /app
