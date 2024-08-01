@@ -32,6 +32,9 @@ COPY . .
 RUN npm run build
 
 FROM nginx:alpine AS runtime
-COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /app/dist /usr/share/nginx/html
+# Remove the line that copies the non-existent nginx.conf file
+COPY --from=base /app/dist /usr/share/nginx/html
 EXPOSE 8080
+
+# Add this line to start Nginx
+CMD ["nginx", "-g", "daemon off;"]
