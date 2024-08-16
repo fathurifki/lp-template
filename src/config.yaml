@@ -1,7 +1,7 @@
 site:
   logo: '~/assets/images/company/logo.png'
-  name: Medicom Indonesia
-  site: 'https://medicom.id'
+  name: Medicom Healthcare Indonesia
+  site: 'https://medicom-indonesia.com/'
   base: '/'
   trailingSlash: false
 
@@ -10,14 +10,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Medicom Indonesia
-    template: '%s — Medicom Indonesia'
-  description: "Medicom Indonesia"
+    default: Medicom Healthcare Indonesia
+    template: '%s — Medicom Healthcare Indonesia'
+  description: "Medicom Healthcare Indonesia"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Medicom Indonesia
+    site_name: Medicom Healthcare Indonesia
     images:
       - url: '~/assets/images/company/logo.png'
         width: 1200
