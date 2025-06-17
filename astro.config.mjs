@@ -36,17 +36,7 @@ export default defineConfig({
     icon({
       include: {
         tabler: ['*'],
-        'flat-color-icons': [
-          'template',
-          'gallery',
-          'approval',
-          'document',
-          'advertising',
-          'currency-exchange',
-          'voice-presentation',
-          'business-contact',
-          'database',
-        ],
+        'flat-color-icons': ['*'],
       },
     }),
 
@@ -75,8 +65,14 @@ export default defineConfig({
   ],
 
   image: {
-    service: squooshImageService(),
-    domains: ['cdn.pixabay.com'],
+    // service: squooshImageService(),
+    // domains: ['cdn.pixabay.com'],
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+      config: {
+        limitInputPixels: 268435456, // 16384 x 16384 pixels
+      },
+    },
   },
 
   markdown: {
