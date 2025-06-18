@@ -7,6 +7,6 @@ Prerequisite
 
 
 How to running the project
-1. install the package with run the command **yarn**
-2. after run yarn, run **yarn dev**
-3. If you want to build the project you can run **yarn build**
+1. install the package with run the command **npm i**
+2. after run yarn, run **npm run dev**
+3. If you want to build the project you can run **npm run build**
